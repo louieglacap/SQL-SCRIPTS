@@ -1,0 +1,97 @@
+create database Customer
+
+use Customer
+
+create table Customer
+(
+FirstName varchar(50),
+LastName varchar(50),
+Age int
+)
+
+INSERT INTO dbo.Customer 
+(FirstName, LastName, Age)
+VALUES ('Louie', 'Lacap', 50);
+
+SELECT * FROM Customer
+
+SELECT FirstName, LastName, Age
+FROM Customer
+
+SELECT FirstName, LastName, Age
+FROM Customer
+WHERE FirstName = 'Louie'
+AND LastName = 'Lacap'
+
+'Lacap%'
+'Lacap_'
+
+UPDATE Customer
+SET Age=25
+WHERE FirstName='Louie'
+AND LastName = 'Lacap;
+
+--This delete Louie Lacap
+/*
+DELETE Customer;
+WHERE FirstName='Louie
+AND LastName LIKE 'Lacap_';o
+*/
+
+ALTER TABLE Customer
+ADD City varchar(50);
+UPDATE Customer
+SET City='Los Angeles';
+
+CREATE TABLE Customer
+(IdentificationNumber INT PRIMARY KEY IDENTITY (1,1)
+FirstName VARCHAR (50);
+LastName VARCHAR (50);
+Age
+
+CREATE TABLE Products
+(
+IdentifcationNumber INT PRIMARY KEY INDENTITY(1,1),
+ProductName VARCHAR (50)
+)
+
+ALTER TABLE Products
+ADD Price FLOAT;
+SELECT * FROM Products
+INSERT INTO Products (ProductName, Price) VALUES ('Keyboard', 39.95);
+INSERT INTO Products (ProductName, Price) VALUES ('Monitor', 295.95);
+
+CREATE TABLE Orders
+(
+OrderID INTEGER INTEGER PRIMARY KEY IDENTITY(1,1),
+OrderDate DATETIME,
+CustomerID INTEGER,
+ProductID INTEGER,
+)
+
+SELECT * FROM Orders;
+SELECT * FROM Products;
+SELECT * FROM Customer;
+
+INSERT INTO Orders (OrderDate, CustomerID, ProductID)
+VALUES (GetDate(2,2)
+
+ALTER TABLE Orders
+ADD FORIGN KEY (CustomerID) REFERENCES Customer (ID)
+
+SELECT SUM(p.Price) Total
+FROM ORDERS o
+INNER JOIN Products p on o.ProductID=p.id
+INNER JOIN Customer c on o.CustomerID=c.Id
+
+SELECT c.LastName, SUM(p.Price) Total
+FROM ORDERS o
+INNER JOIN Products p on o.ProductID=p.id
+INNER JOIN Customer c on o.CustomerID=c.Id
+GROUP BY c.LastName
+
+SELECT c.LastName, p.ProductName, SUM(p.Price) Total
+FROM ORDERS o
+INNER JOIN Products p on o.ProductID=p.id
+INNER JOIN Customer c on o.CustomerID=c.Id
+GROUP BY c.LastName, p.ProductName
